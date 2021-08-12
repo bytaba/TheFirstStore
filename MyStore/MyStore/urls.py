@@ -9,5 +9,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('' , views.index ),
     path('about-us/' , include('about.urls') ),
-    path('contact-us/' , include('contact.urls'))
+    path('contact-us/' , include('contact.urls')),
+    path('products/'   , include('products.urls'))
 ]
