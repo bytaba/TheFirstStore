@@ -12,12 +12,16 @@
     <header id="header" class="header">
         <div class="main-header">
             <ul>
-                <li><a href="">logo</a></li>
-                <li><a href="">courses</a></li>
-                <li><a href="">contact</a></li>
-                <li><a href="">about</a></li>
-                <li><a href="">login</a></li>
-                <li><a href="">signup</a></li>
+                <li><a href="{% url 'contact:contact' %}">contact</a></li>
+                <li><a href="{% url 'products:products' %}">products</a></li>
+                <li><a href="{% url 'contact:contact' %}">contact</a></li>
+                <li><a href="{% url 'about:about' %}">about</a></li>
+                {% if user.is_authenticated  %}
+                <li><a href="{% url 'accounts:logout' %}">logout</a></li>
+                {% else %}
+                <li><a href="{% url 'accounts:login' %}">login</a></li>
+                <li><a href="{% url 'accounts:signup' %}">signup</a></li>
+                {% endif %}
             </ul>
         </div>
     </header>
