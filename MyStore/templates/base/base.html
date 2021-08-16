@@ -17,7 +17,7 @@
                 <li><a href="{% url 'contact:contact' %}">contact</a></li>
                 <li><a href="{% url 'about:about' %}">about</a></li>
                 {% if user.is_authenticated  %}
-                <li><a href="{% url 'accounts:logout' %}">logout</a></li>
+                <li><form action="{% url 'accounts:logout' %}" method="post">{% csrf_token %} <button type="submit">logout</button></form></li>
                 {% else %}
                 <li><a href="{% url 'accounts:login' %}">login</a></li>
                 <li><a href="{% url 'accounts:signup' %}">signup</a></li>
@@ -25,5 +25,8 @@
             </ul>
         </div>
     </header>
+    <div class="content">
+    {% block content %}{% endblock %}
+    </div>
 </body>
 </html>
