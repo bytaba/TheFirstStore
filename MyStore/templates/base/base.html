@@ -16,6 +16,7 @@
                 <li><a href="{% url 'products:products' %}">products</a></li>
                 <li><a href="{% url 'contact:contact' %}">contact</a></li>
                 <li><a href="{% url 'about:about' %}">about</a></li>
+                <li><a href="{% url 'blog:posts' %}">blog</a></li>
                 {% if user.is_authenticated  %}
                 <li><form action="{% url 'accounts:logout' %}" method="post">{% csrf_token %} <button type="submit">logout</button></form></li>
                 {% else %}
