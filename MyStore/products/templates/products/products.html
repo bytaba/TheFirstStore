@@ -1,5 +1,13 @@
 {% extends 'base/base.html' %}
 {% load static %}
+
+
 {% block content %}
+<section>
+<ul>
+{% for product in products %}
 {% include 'products/includes/product.html' %}
+{% endfor %}
+</ul>
+</section>
 {% endblock %}

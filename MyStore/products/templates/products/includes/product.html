@@ -1,3 +1,8 @@
-<p>
-    this is a product
-</p>
+{% load static %}
+<li>
+    <a href="{% url 'products:product-detail' slug=product.slug %}">
+    <h3>{{product.title}}</h3>
+    <img src="{% static 'products/images/'|add:product.image %}" alt="{{product.title}}">
+    <p>{{product.summary}}</p>
+</a>
+</li>
